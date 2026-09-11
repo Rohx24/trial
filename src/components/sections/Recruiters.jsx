@@ -13,9 +13,17 @@ function shortSector(s) {
 function RecruiterCard({ c }) {
   const mono = c.co.replace(/[^A-Za-z]/g, "").slice(0, 2).toUpperCase() || "RV";
   const domain = DOMAINS[c.co];
+  // Paste a free logo.dev publishable token here → every card renders a crisp,
+  // full-colour logo. Empty = falls back to favicon-grade sources.
+  const LOGO_TOKEN = "";
   const sources = domain
-    ? [`https://unavatar.io/${domain}?fallback=false`,
-       `https://www.google.com/s2/favicons?domain=${domain}&sz=256`]
+    ? [
+        ...(LOGO_TOKEN
+          ? [`https://img.logo.dev/${domain}?token=${LOGO_TOKEN}&size=256&format=png&retina=true`]
+          : []),
+        `https://unavatar.io/${domain}?fallback=false`,
+        `https://www.google.com/s2/favicons?domain=${domain}&sz=256`,
+      ]
     : [];
   const [idx, setIdx] = useState(0);
   const showLogo = idx < sources.length;

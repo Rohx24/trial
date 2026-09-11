@@ -30,7 +30,7 @@
   background: #fff; border-bottom: 1px solid var(--line);
 }
 /* contain + capped so small favicons never blow up blurry */
-.rf-pic img { max-width: 62%; max-height: 58%; width: auto; height: auto; object-fit: contain; display: block; pointer-events: none; }
+.rf-pic img { max-width: 78%; max-height: 72%; width: auto; height: auto; object-fit: contain; display: block; pointer-events: none; }
 .rf-pic.mono { background: linear-gradient(150deg, var(--sunk), color-mix(in srgb, var(--bronze) 14%, var(--sunk))); border-bottom-color: transparent; }
 .rf-picmono { font-family: var(--mono); font-size: 34px; color: var(--slate-3); letter-spacing: .04em; }
 
